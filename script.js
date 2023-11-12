@@ -1,12 +1,12 @@
-let btn1 = document.getElementById("start_btn");
-let btn2 = document.getElementById("stop_btn");
-let btn3 = document.getElementById("reset_btn");
+let button1 = document.getElementById("start_btn");
+let button2 = document.getElementById("stop_btn");
+let button3 = document.getElementById("reset_btn");
 let timer_text = document.getElementById("timer_text");
 
 //adding event listener to all buttons
-btn1.addEventListener("click" , Start);
-btn2.addEventListener("click" , Stop);
-btn3.addEventListener("click" , Reset);
+button1.addEventListener("click" , Start);
+button2.addEventListener("click" , Stop);
+button3.addEventListener("click" , Reset);
 
 let check = false;
 let check_for_start = false;
@@ -77,9 +77,11 @@ function Start() {
         else {
             h = hours;
         }
+
         timer_text.innerHTML = h + " : " + m + " : " + s + " : " + ms;
     },5)
 }
+
 //Defining Stop function
 function Stop() {
     if(check === false) return;
@@ -87,6 +89,7 @@ function Stop() {
     start_btn.innerText = "RESUME";
     check_for_start = false;
 }
+
 //Defining Reset function
 function Reset() {
     check = false;
@@ -99,3 +102,4 @@ function Reset() {
     clearInterval(event_value);
     start_btn.innerText = "START";   
 }
+
